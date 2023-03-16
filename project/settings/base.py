@@ -167,31 +167,33 @@ WAGTAILADMIN_BASE_URL = "http://example.com"
 
 # project
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 import os
 
 import dj_database_url
 
-DATABASE_URL = os.environ.get('DATABASE_URL', 	'postgres://:@:/project')
-DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
-INSTALLED_APPS.append('webpack_boilerplate')
-INSTALLED_APPS.append('rest_framework')
-INSTALLED_APPS.append('allauth')
-INSTALLED_APPS.append('allauth.account')
-INSTALLED_APPS.append('allauth.socialaccount')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build')]
-WEBPACK_LOADER = { 'MANIFEST_FILE': os.path.join(BASE_DIR, 'frontend/build/manifest.json'), }
+DATABASE_URL = os.environ.get("DATABASE_URL", "postgres://:@:/project")
+DATABASES["default"] = dj_database_url.parse(DATABASE_URL)
+INSTALLED_APPS.append("webpack_boilerplate")
+INSTALLED_APPS.append("rest_framework")
+INSTALLED_APPS.append("allauth")
+INSTALLED_APPS.append("allauth.account")
+INSTALLED_APPS.append("allauth.socialaccount")
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "frontend/build")]
+WEBPACK_LOADER = {
+    "MANIFEST_FILE": os.path.join(BASE_DIR, "frontend/build/manifest.json"),
+}
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
     ]
 }
-LOGIN_REDIRECT_URL = '/'
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = "/"
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 ]
