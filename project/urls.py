@@ -1,15 +1,13 @@
 from django.conf import settings
-from django.urls import include, path
 from django.contrib import admin
-
+from django.contrib.auth.models import User
+from django.urls import include, path
+from rest_framework import routers, serializers, viewsets
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
-
-from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
 
 urlpatterns = [
 	path('accounts/', include('allauth.urls')),
