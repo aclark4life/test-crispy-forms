@@ -45,7 +45,7 @@ include base.mk
 #include project.mk
 #
 # Uncomment the next line to customize the default goal
-#.DEFAULT_GOAL := git-commit-push
+.DEFAULT_GOAL := git-commit-push
 
 # Uncomment and edit the next 12 lines to customize the eb-create goal
 # eb-create:
