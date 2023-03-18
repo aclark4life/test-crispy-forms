@@ -9,6 +9,10 @@ class HomePage(Page):
 
 
 class TimeEntry(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'time entries'
+
     start_time = models.DateTimeField(default=timezone.now)
     end_time = models.DateTimeField(blank=True, null=True)
     description = models.TextField()
