@@ -3,6 +3,7 @@ from .models import TimeEntry
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from crispy_forms.layout import Div, Field, Submit
+from django.forms.widgets import DateTimeInput
 
 
 class TimeEntryForm(forms.ModelForm):
@@ -24,5 +25,6 @@ class TimeEntryForm(forms.ModelForm):
             css_class='row'
         )
 
-    start_time = forms.DateField(label='Start Date', widget=forms.DateInput(attrs={'type': 'time'}))
-    end_time = forms.DateField(label='End Date', widget=forms.DateInput(attrs={'type': 'time'}))
+    start_time = forms.DateTimeField(widget=DateTimeInput(attrs={'type': 'datetime-local'}))
+    end_time = forms.DateTimeField(widget=DateTimeInput(attrs={'type': 'datetime-local'}))
+
