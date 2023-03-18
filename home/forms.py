@@ -18,11 +18,11 @@ class TimeEntryForm(forms.ModelForm):
         self.helper.form_class = 'form-inline'
         self.helper.add_input(Submit('submit', 'Save'))
         self.helper.layout = Div(
-            Div(Field('start_date', css_class='form-control'), css_class='col-sm-6'),
-            Div(Field('end_date', css_class='form-control'), css_class='col-sm-6'),
+            Div(Field('start_time', css_class='form-control'), css_class='col-sm-6'),
+            Div(Field('end_time', css_class='form-control'), css_class='col-sm-6'),
             Div(Field('description', css_class='form-control'), css_class='col-sm-12'),
             css_class='row'
         )
 
-    start_date = forms.DateField(label='Start Date', widget=forms.DateInput(attrs={'type': 'date'}))
-    end_date = forms.DateField(label='End Date', widget=forms.DateInput(attrs={'type': 'date'}))
+    start_time = forms.DateField(label='Start Date', widget=forms.DateInput(attrs={'type': 'time'}))
+    end_time = forms.DateField(label='End Date', widget=forms.DateInput(attrs={'type': 'time'}))
