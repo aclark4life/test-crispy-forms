@@ -28,4 +28,4 @@ class TimeEntryForm(forms.ModelForm):
 
     start_time = forms.DateTimeField(widget=DateTimeInput(attrs={'type': 'datetime-local'}), initial=timezone.datetime.now() )
     end_time = forms.DateTimeField(widget=DateTimeInput(attrs={'type': 'datetime-local'}), initial=timezone.datetime.now() + timezone.timedelta(hours=1))
-
+    description = forms.CharField(initial='My description')
