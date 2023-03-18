@@ -1,21 +1,10 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
-  <h1>Create New Time Entry</h1>
-  <form method="post">
-    {% csrf_token %}
-    <div class="form-group">
-      <label for="id_date">Date</label>
-      <input type="date" class="form-control" id="id_date" name="date" required>
-    </div>
-    <div class="form-group">
-      <label for="id_hours">Hours</label>
-      <input type="number" class="form-control" id="id_hours" name="hours" min="0" max="24" step=".01" required>
-    </div>
-    <div class="form-group">
-      <label for="id_notes">Notes</label>
-      <textarea class="form-control" id="id_notes" name="notes" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Save</button>
-  </form>
+    <h1>Create New Time Entry</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% crispy form %}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
 {% endblock %}
