@@ -1,28 +1,29 @@
 {% extends 'home/home_page.html' %}
-
 {% block content %}
-<h1>Time Entries</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Hours</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for time_entry in time_entries %}
-    <tr>
-      <td>{{ time_entry.date }}</td>
-      <td>{{ time_entry.hours }}</td>
-      <td>{{ time_entry.notes }}</td>
-    </tr>
-    {% empty %}
-    <tr>
-      <td colspan="3">No time entries yet.</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-<a href="{% url 'create_time_entry' %}">Add Time Entry</a>
+    <div class="container">
+        <h1>Time Entries</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Hours</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for time_entry in time_entries %}
+                    <tr>
+                        <td>{{ time_entry.start_time }}</td>
+                        <td>{{ time_entry.end_time }}</td>
+                        <td>{{ time_entry.description }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3">No time entries yet.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'create_time_entry' %}">Add Time Entry</a>
+    </div>
 {% endblock %}
