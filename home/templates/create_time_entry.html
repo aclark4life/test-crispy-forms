@@ -1,9 +1,11 @@
 {% extends 'home/home_page.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <h1>Create New Time Entry</h1>
-    <form method="post">
-        {% csrf_token %}
-        {% crispy form %}
-    </form>
+    <div class="container">
+        <h1>Create New Time Entry</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% crispy form %}
+        </form>
+    </div>
 {% endblock %}
