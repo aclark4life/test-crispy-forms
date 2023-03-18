@@ -44,6 +44,12 @@ urlpatterns = urlpatterns + [
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]
 
+
+urlpatterns += [
+    path("time_entries/", include("home.urls")),
+]
+
+
 urlpatterns = urlpatterns + [
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in
