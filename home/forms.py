@@ -20,6 +20,7 @@ class TimeEntryForm(forms.ModelForm):
         self.helper.layout = Div(
             Div(Field('start_date', css_class='form-control'), css_class='col-sm-6'),
             Div(Field('end_date', css_class='form-control'), css_class='col-sm-6'),
+            Div(Field('description', css_class='form-control'), css_class='col-sm-12'),
             css_class='row'
         )
 
